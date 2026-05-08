@@ -111,7 +111,7 @@ flowchart TD
     G2(["접근성 Score"])
     G3(["체감이동 GAP Score"])
 
-    FORMULA["통합 Score 산출\n\nScore = w₁ × 공급GAP + w₂ × 접근성GAP + w₃ × 체감이동GAP\n\n가중치 결정 방법\n① PCA로 주성분 기반 자동 추출 (데이터 기반)\n② 선행연구 기반 전문가 설정 (설명 용이)"]
+    FORMULA[**어떤 공식으로 score 책정할지 의논해 봐야할듯**]
 
     RESULT(["행정동별 종합 취약 Score"])
 
