@@ -1,0 +1,12 @@
+# 원본 데이터 제외
+business_employment/data/raw
+
+# 주피터 체크포인트
+.ipynb_checkpoints/
+
+# 환경 파일
+.env
+__pycache__/
+
+# 메모 파일
+business_employment/memo
