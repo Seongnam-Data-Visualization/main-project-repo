@@ -1,3 +1,19 @@
+# Raw and bulky source data
+business_employment/data/raw
+Dataset_v1/BND_ADM_DONG_PG/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+
+# Python cache
 __pycache__/
 *.pyc
-Dataset_v1/BND_ADM_DONG_PG/
+
+# OS metadata
+.DS_Store
+
+# Personal notes
+business_employment/memo
