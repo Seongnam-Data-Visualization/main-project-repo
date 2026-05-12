@@ -69,10 +69,12 @@ def main() -> None:
     gdf["ADM_CD"] = gdf["ADM_CD"].astype(str)
     mapped = gdf.merge(scored, on="ADM_CD", how="left")
     mapped["plot_color"] = mapped["type_label"].map(TYPE_COLOR).fillna("#D0D5DD")
+    gu_boundary = mapped.dissolve(by="gu_name", dropna=False)
 
     fig, ax = plt.subplots(figsize=(10.5, 11.5))
     mapped.plot(color=mapped["plot_color"], edgecolor="white", linewidth=0.75, ax=ax)
     mapped.boundary.plot(ax=ax, color="#FFFFFF", linewidth=0.55)
+    gu_boundary.boundary.plot(ax=ax, color="#101828", linewidth=2.2, alpha=0.9)
 
     for _, row in mapped.iterrows():
         if row.geometry is None or row.geometry.is_empty:
@@ -91,6 +93,11 @@ def main() -> None:
             weight="bold",
             linespacing=0.92,
         )
+
+    for gu_name, row in gu_boundary.iterrows():
+        if row.geometry is None or row.geometry.is_empty or pd.isna(gu_name):
+            continue
+        point = row.geometry.representative_point()
 
     handles = [
         Patch(facecolor=TYPE_COLOR[label], edgecolor="none", label=f"{TYPE_SHORT[label]} - {label.split(' ', 2)[2]}")
@@ -138,7 +145,7 @@ def main() -> None:
     fig.text(
         0.01,
         0.01,
-        "Data: analysis/data/seongnam_scored.csv(type_label), residential/data/raw/Dataset_v1/seongnam_dong.geojson",
+        "Data: analysis/data/seongnam_scored.csv(type_label), residential/data/raw/Dataset_v1/seongnam_dong.geojson. Thick border: gu boundary",
         fontsize=9,
         color="#667085",
     )
