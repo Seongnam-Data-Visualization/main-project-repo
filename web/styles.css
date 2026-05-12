@@ -205,6 +205,18 @@ figcaption {
   font-size: 1.02rem;
 }
 
+.figure-count {
+  display: inline-flex;
+  margin-top: 6px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  color: #344054;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .axis-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -437,6 +449,43 @@ figcaption {
   aspect-ratio: 5 / 3.4;
   object-fit: contain;
   margin-bottom: 14px;
+}
+
+.figure-meta {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #344054;
+  background: var(--soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.figure-meta-integrated {
+  color: #53389e;
+  background: #f4ebff;
+}
+
+.figure-meta-residential {
+  color: #175cd3;
+  background: #eff8ff;
+}
+
+.figure-meta-employment {
+  color: #067647;
+  background: #ecfdf3;
+}
+
+.figure-meta-transport {
+  color: #b54708;
+  background: #fffaeb;
+}
+
+.figure-meta-archive {
+  color: #475467;
+  background: #f2f4f7;
 }
 
 .image-button {
