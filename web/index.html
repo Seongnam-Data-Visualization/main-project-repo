@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>성남시 3-Axis 수요-공급 분석</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#overview">Seongnam 3-Axis Analysis</a>
+      <nav class="nav" aria-label="페이지 섹션">
+        <a href="#framework">Frame</a>
+        <a href="#types">Types</a>
+        <a href="#residence">Residence</a>
+        <a href="#business">Business</a>
+        <a href="#transport">Transport</a>
+        <a href="#figures">Figures</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="overview" class="overview">
+        <div class="overview-copy">
+          <p class="eyebrow">2026 성남시 공공데이터 활용 시각화</p>
+          <h1>성남 생활권의 <br>수요-공급 <br> 불균형 진단</h1>
+
+          <div class="metric-row" aria-label="핵심 지표">
+            <div class="metric">
+              <strong>50</strong>
+              <span>행정동 분석</span>
+            </div>
+            <div class="metric">
+              <strong>66%</strong>
+              <span>Type C/D 취약 동</span>
+            </div>
+            <div class="metric">
+              <strong>3</strong>
+              <span>자족형 Type A 동</span>
+            </div>
+          </div>
+        </div>
+
+        <figure class="hero-figure">
+          <button class="image-button" data-full="../analysis/figures/seongnam_type_label_map.png" data-title="성남시 행정동 Type Label 지도">
+            <img src="../analysis/figures/seongnam_type_label_map.png" alt="성남시 행정동 Type Label 지도" />
+          </button>
+          <figcaption>행정동별 Type A-D를 위험도 색상으로 표시한 통합 지도</figcaption>
+        </figure>
+      </section>
+
+      <section id="framework" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Demand-Supply Frame</p>
+          <h2>3-axis로 생활권을 다시 읽기</h2>
+        </div>
+
+        <div class="axis-grid">
+          <article class="axis-card residential-card">
+            <span class="axis-label">주거 Axis</span>
+            <h3>주거 수요와 공급</h3>
+            <p>세대수·총인구·생산가능인구를 수요 지표로, 주택 재고·주거비·주택 유형을 공급 구조로 해석</p>
+            <dl>
+              <div><dt>수요</dt><dd>세대수 · 총인구 · 생산가능인구</dd></div>
+              <div><dt>공급</dt><dd>주택 재고 · 주거비 · 유형</dd></div>
+            </dl>
+          </article>
+
+          <article class="axis-card employment-card">
+            <span class="axis-label">노동 Axis</span>
+            <h3>일자리와 거주 노동력</h3>
+            <p>생산가능인구 대비 지역 내 종사자 규모를 통해 직주 균형 또는 직주분리 압력을 판단</p>
+            <dl>
+              <div><dt>수요</dt><dd>생산가능인구 · 거주 기반 노동 수요</dd></div>
+              <div><dt>공급</dt><dd>종사자 · 사업체 · 법인</dd></div>
+            </dl>
+          </article>
+
+          <article class="axis-card transport-card">
+            <span class="axis-label">교통 Axis</span>
+            <h3>통근 수요와 접근성</h3>
+            <p>통근량과 서울/축 방향 이동 수요를, 대중교통 접근성과 통행 수단 구조가 얼마나 완충하는지 확인</p>
+            <dl>
+              <div><dt>수요</dt><dd>통근량 · 서울/축 방향 이동</dd></div>
+              <div><dt>공급</dt><dd>철도·버스 접근성 · 수단 구조</dd></div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section id="types" class="section band">
+        <div class="section-heading">
+          <p class="eyebrow">Type Label</p>
+          <h2>동별 수요-공급 불균형을 반영한 관리 유형</h2>
+        </div>
+
+        <div class="type-layout">
+          <div class="type-list">
+            <article class="type-card type-a">
+              <strong>Type A</strong>
+              <span>자족형 · 3개 동</span>
+              <p>일자리 공급, 접근성, 통근 압력이 상대적으로 균형적인 동. 생활권 내 균형 거점으로 유지·확장.</p>
+            </article>
+            <article class="type-card type-b">
+              <strong>Type B</strong>
+              <span>직주분리형 · 14개 동</span>
+              <p>거주 수요와 일자리 공급이 분리되어 외부 통근 압력이 큰 동. 직주 연결과 통근 시간 절감이 핵심.</p>
+            </article>
+            <article class="type-card type-c">
+              <strong>Type C</strong>
+              <span>접근성 불량형 · 20개 동</span>
+              <p>수요를 교통 접근성이 충분히 받치지 못하는 동. 대중교통 접근성과 환승 연결성 개선이 우선.</p>
+            </article>
+            <article class="type-card type-d">
+              <strong>Type D</strong>
+              <span>복합 취약형 · 13개 동</span>
+              <p>주거·노동·교통 결핍이 겹치는 동. 복합 취약지로 우선 개입 패키지가 필요.</p>
+            </article>
+          </div>
+
+          <div class="conclusion-panel">
+            <ul>
+              <li>Type C/D가 33개 동으로 전체의 66%를 차지</li>
+              <li>동일 중생활권 내부에도 취약 원인이 다르게 나타남</li>
+              <li>생활권 경계는 계획의 시작점, 동별 Type은 실행 전략의 단위</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="residential" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Residential</p>
+          <h2>주거 분석 </h2>
+        </div>
+        <div class="feature-grid">
+          <figure class="feature-figure">
+            <button class="image-button" data-full="../residential/data/processed/python_visualizations/15_insight_executive_summary.png" data-title="주거 데이터 핵심 인사이트">
+              <img src="../residential/data/processed/python_visualizations/15_insight_executive_summary.png" alt="주거 데이터 핵심 인사이트" />
+            </button>
+          </figure>
+          <div class="insight-list">
+            <article>
+              <h3>분당구</h3>
+              <p>세대수와 아파트 비율, 매매가 중앙값이 모두 높아 주거 가격과 재고의 중심축</p>
+            </article>
+            <article>
+              <h3>수정구</h3>
+              <p>단독·다가구 재고와 도심형 수요가 겹치며, 자족 가능성과 취약성이 함께 나타남</p>
+            </article>
+            <article>
+              <h3>중원구</h3>
+              <p>연립·다세대 비중과 상대적 가격 접근성이 있으나, 접근성 보완이 주과제</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="employment" class="section band">
+        <div class="section-heading">
+          <p class="eyebrow">Employment</p>
+          <h2>노동 분석 결론</h2>
+          <p>일자리 공급은 일부 거점에 집중되며, 다수 주거 동은 외부 통근에 의존합니다.</p>
+        </div>
+        <div class="figure-strip">
+          <figure>
+            <button class="image-button" data-full="../business_employment/data/processed/figures/gu_total_workers_bar.png" data-title="구별 종사자 수">
+              <img src="../business_employment/data/processed/figures/gu_total_workers_bar.png" alt="구별 종사자 수" />
+            </button>
+            <figcaption>구별 종사자 규모</figcaption>
+          </figure>
+          <figure>
+            <button class="image-button" data-full="../business_employment/data/processed/figures/dong_total_workers.png" data-title="행정동별 종사자 수">
+              <img src="../business_employment/data/processed/figures/dong_total_workers.png" alt="행정동별 종사자 수" />
+            </button>
+            <figcaption>동별 일자리 공급</figcaption>
+          </figure>
+          <figure>
+            <button class="image-button" data-full="../business_employment/data/processed/figures/scatter_biz_vs_workers.png" data-title="사업체와 종사자 관계">
+              <img src="../business_employment/data/processed/figures/scatter_biz_vs_workers.png" alt="사업체와 종사자 관계" />
+            </button>
+            <figcaption>사업체-종사자 관계</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="transport" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Transport</p>
+          <h2>교통 분석 결론</h2>
+          <p>교통은 주거-노동 불일치를 완충하며, 수요 대비 접근성이 낮은 지역이 우선 개선 대상입니다.</p>
+        </div>
+        <div class="figure-strip">
+          <figure>
+            <button class="image-button" data-full="../transport/transport/data/processed/figures/high_demand_low_access_top10.png" data-title="높은 수요·낮은 접근성 Top 10">
+              <img src="../transport/transport/data/processed/figures/high_demand_low_access_top10.png" alt="높은 수요 낮은 접근성 Top 10" />
+            </button>
+            <figcaption>우선 개선 후보</figcaption>
+          </figure>
+          <figure>
+            <button class="image-button" data-full="../transport/transport/data/processed/figures/commute_vs_accessibility.png" data-title="통근 수요와 접근성">
+              <img src="../transport/transport/data/processed/figures/commute_vs_accessibility.png" alt="통근 수요와 접근성" />
+            </button>
+            <figcaption>통근-접근성 관계</figcaption>
+          </figure>
+          <figure>
+            <button class="image-button" data-full="../transport/transport/data/processed/figures/mode_share_by_gu.png" data-title="구별 통행 수단 비중">
+              <img src="../transport/transport/data/processed/figures/mode_share_by_gu.png" alt="구별 통행 수단 비중" />
+            </button>
+            <figcaption>수단 분담 구조</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="planning" class="section band">
+        <div class="section-heading">
+          <p class="eyebrow">Planning Implication</p>
+          <h2>생활권 계획에 대한 결론</h2>
+        </div>
+        <div class="planning-grid">
+          <article>
+            <h3>2020 체계</h3>
+            <p>수정중원·분당·판교 3개 대생활권은 중심지 구조를 설명하는 데 유용하지만, 동별 결핍 원인을 식별하기에는 부족합니다.</p>
+          </article>
+          <article>
+            <h3>2035 개편</h3>
+            <p>성남 1개 대생활권과 북부·중부·남부 3개 중생활권은 통합 생활권 관점에서 진전된 방향입니다.</p>
+          </article>
+          <article>
+            <h3>보완 제안</h3>
+            <p>3개 중생활권 내부에 Type A-D 관리유형을 추가해 직주분리, 접근성 부족, 복합 취약성을 별도 처방해야 합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="figures" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Figure Gallery</p>
+          <h2>분석 산출물 탐색</h2>
+          <p class="figure-count" aria-live="polite"></p>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Figure category filter">
+          <button class="filter-button is-active" data-filter="all">전체</button>
+          <button class="filter-button" data-filter="integrated">통합</button>
+          <button class="filter-button" data-filter="residential">주거</button>
+          <button class="filter-button" data-filter="employment">노동</button>
+          <button class="filter-button" data-filter="transport">교통</button>
+        </div>
+
+        <div class="gallery" id="figure-gallery" aria-label="Figure gallery"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Data sources: residential, business_employment, transport, analysis folders</span>
+      <a href="#overview">맨 위로</a>
+    </footer>
+
+    <dialog class="image-dialog" aria-label="확대 이미지 보기">
+      <button class="dialog-close" aria-label="닫기">×</button>
+      <div class="dialog-header">
+        <span class="dialog-figure-title"></span>
+        <span class="dialog-counter"></span>
+      </div>
+      <div class="dialog-image-wrap">
+        <button class="dialog-prev" aria-label="이전">&#8249;</button>
+        <img alt="" />
+        <button class="dialog-next" aria-label="다음">&#8250;</button>
+      </div>
+      <div class="dialog-dots"></div>
+    </dialog>
+
+    <script src="figures.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
