@@ -29,6 +29,41 @@ TABLEAU_MASTER_CSV = TABLEAU_DIR / "seongnam_employment_master.csv"
 
 GU_SCATTER_COLORS = {"분당구": "#1f77b4", "수정구": "#ff7f0e", "중원구": "#2ca02c"}
 
+# KSIC 산업 대분류(주사업_산업대분류코드 A~S) — 통계청 표준산업분류 대분류명
+KSIC_MAJOR_KR: dict[str, str] = {
+    "A": "농업, 임업 및 어업",
+    "B": "광업",
+    "C": "제조업",
+    "D": "전기·가스·증기 및 공기 조절 공급업",
+    "E": "수도·하수 및 폐기물 처리, 원료 재생업",
+    "F": "건설업",
+    "G": "도매 및 소매업",
+    "H": "운수 및 창고업",
+    "I": "숙박 및 음식점업",
+    "J": "정보통신업",
+    "K": "금융 및 보험업",
+    "L": "부동산업",
+    "M": "전문, 과학 및 기술 서비스업",
+    "N": "사업시설 관리, 사업 지원 및 임대 서비스업",
+    "O": "공공행정, 국방 및 사회보장 행정",
+    "P": "교육 서비스업",
+    "Q": "보건업 및 사회복지 서비스업",
+    "R": "예술·스포츠 및 여가관련 서비스업",
+    "S": "협회·단체, 수리 및 기타 개인 서비스업",
+}
+
+
+def industry_col_to_legend_label(col: str) -> str:
+    if col == "기타":
+        return "기타"
+    if not str(col).startswith("industry_"):
+        return str(col)
+    suffix = str(col).removeprefix("industry_").strip().upper()
+    letter = suffix[:1] if suffix else ""
+    if letter in KSIC_MAJOR_KR:
+        return KSIC_MAJOR_KR[letter]
+    return str(col)
+
 # make_figures()가 끝까지 성공 시 생성되는 PNG 목록 (순서대로)
 FIGURE_MANIFEST: tuple[str, ...] = (
     "dong_total_workers.png",
@@ -191,10 +226,11 @@ def make_figures() -> None:
     row_sums = stack.sum(axis=1).replace(0, np.nan)
     pct = stack.div(row_sums, axis=0).fillna(0.0)
     pct = pct.reindex(sorted(pct.index))
-    ncol = len(pct.columns)
+    pct_display = pct.rename(columns={c: industry_col_to_legend_label(c) for c in pct.columns})
+    ncol = len(pct_display.columns)
     bar_colors = [plt.cm.tab10(i % 10) for i in range(ncol)]
     plt.figure(figsize=(9, 5))
-    pct.plot(kind="bar", stacked=True, ax=plt.gca(), color=bar_colors, width=0.65)
+    pct_display.plot(kind="bar", stacked=True, ax=plt.gca(), color=bar_colors, width=0.65)
     plt.title("구별 업종 분포 비교")
     plt.ylabel("비율")
     plt.xlabel("")
