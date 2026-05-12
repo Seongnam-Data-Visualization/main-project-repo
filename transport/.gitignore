@@ -1,0 +1,23 @@
+# Raw and bulky source data
+business_employment/data/raw
+residential/data/raw/
+Dataset_v1/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS metadata
+.DS_Store
+
+# Personal notes
+business_employment/memo
+
+# Legacy generated outputs
+output/
