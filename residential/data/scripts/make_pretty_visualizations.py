@@ -474,10 +474,16 @@ def write_readme(created_files: list[str]) -> None:
     lines.extend(
         [
             "",
+            "## 해석 문서",
+            "",
+            "- `FIGURE_GUIDE.md`: 각 figure의 의미와 사용 데이터 설명",
+            "- `INSIGHTS.md`: 전체 결과를 바탕으로 도출한 핵심 인사이트",
+            "",
             "## 재생성",
             "",
             "```powershell",
             "python .\\residential\\data\\scripts\\make_pretty_visualizations.py",
+            "python .\\residential\\data\\scripts\\make_residential_insights.py",
             "```",
             "",
             "지도 이미지는 `geopandas`가 설치되어 있을 때 생성됩니다.",

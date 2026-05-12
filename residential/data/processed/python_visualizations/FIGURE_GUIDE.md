@@ -86,6 +86,36 @@
 - 사용 데이터: `transactions_sales_long.csv`, `transactions_rent_long.csv`
 - 해석 포인트: 상단은 구별 월별 매매가 중앙값, 하단은 구별 월별 전세/월세 거래건수입니다. 원자료 기간이 2025.5.13-2026.5.12이므로 2025년 5월과 2026년 5월은 부분월입니다.
 
+## 15_insight_executive_summary.png
+
+- 의미: 전체 주거 분석 결과를 6개 핵심 메시지 카드로 요약한 executive summary입니다.
+- 사용 데이터: `01_admin_dong_demand.csv`, `02_legal_dong_cost_summary.csv`, `05_gu_demand_and_stock_reference.csv`, `transactions_sales_long.csv`, `transactions_rent_long.csv`
+- 해석 포인트: 분당구/수정구/중원구의 역할 차이, 가격 상위 조합, 해석 단위 주의사항을 한 장에서 설명할 때 사용합니다.
+
+## 16_insight_admin_dong_quadrants.png
+
+- 의미: 행정동별 세대수와 생산가능인구 비율을 함께 본 수요 포지셔닝 figure입니다.
+- 사용 데이터: `01_admin_dong_demand.csv`
+- 해석 포인트: 오른쪽 위는 대규모·활동인구형 행정동, 왼쪽 아래는 소규모·고령/저활동형 행정동으로 볼 수 있습니다. 점 크기는 65세 이상 인구비율입니다.
+
+## 17_insight_gu_demand_supply_price.png
+
+- 의미: 구별 세대수 대비 주택수, 매매가 중앙값, 아파트 비율, 세대 규모를 함께 본 bubble chart입니다.
+- 사용 데이터: `05_gu_demand_and_stock_reference.csv`, `transactions_sales_long.csv`
+- 해석 포인트: 분당구는 가격과 아파트 비율이 높고, 수정구/중원구는 상대적으로 가격 접근성이 높으며 주택 재고 구조가 다릅니다.
+
+## 18_insight_top_price_combinations.png
+
+- 의미: 매매, 전세, 월세별 법정동-건축유형 가격 상위 조합을 보여줍니다.
+- 사용 데이터: `02_legal_dong_cost_summary.csv`
+- 해석 포인트: 가격 상단이 어느 구/법정동/건축유형에서 만들어지는지 확인합니다. 거래건수 10건 이상 조합만 표시했습니다.
+
+## 19_insight_transaction_mix.png
+
+- 의미: 구별 매매/전세/월세 거래 비중과 총 거래건수를 보여주는 100% 누적 막대그래프입니다.
+- 사용 데이터: `transactions_sales_long.csv`, `transactions_rent_long.csv`
+- 해석 포인트: 가격 수준뿐 아니라 실제 시장 활동이 매매 중심인지 임대 중심인지 비교할 수 있습니다.
+
 ## 주의사항
 
 - `03_admin_dong_cost_proxy.csv` 기반 지도 가격 시각화는 공식 법정동-행정동 매핑이 아니라 행정동명 기반 추정 매핑이므로 이번 figure 묶음에서는 직접 사용하지 않았습니다.
