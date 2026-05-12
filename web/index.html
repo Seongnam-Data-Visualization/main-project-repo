@@ -252,7 +252,8 @@
         <div class="section-heading">
           <p class="eyebrow">Figure Gallery</p>
           <h2>분석 산출물 탐색</h2>
-          <p>주요 figure를 주제별로 모았다. 이미지를 누르면 크게 볼 수 있다.</p>
+          <p>레포의 figure 산출물을 주제별로 정리했다. 이미지를 누르면 크게 볼 수 있다.</p>
+          <p class="figure-count" aria-live="polite"></p>
         </div>
 
         <div class="filter-bar" role="group" aria-label="Figure category filter">
@@ -261,89 +262,10 @@
           <button class="filter-button" data-filter="residential">주거</button>
           <button class="filter-button" data-filter="employment">노동</button>
           <button class="filter-button" data-filter="transport">교통</button>
+          <button class="filter-button" data-filter="archive">복제본</button>
         </div>
 
-        <div class="gallery">
-          <article class="gallery-card" data-category="integrated">
-            <button class="image-button" data-full="../analysis/figures/seongnam_type_label_map.png" data-title="성남시 행정동 Type Label 지도">
-              <img src="../analysis/figures/seongnam_type_label_map.png" alt="성남시 행정동 Type Label 지도" />
-            </button>
-            <h3>Type Label Map</h3>
-            <p>동별 A-D 관리유형과 구 경계를 함께 표시한 통합 지도.</p>
-          </article>
-
-          <article class="gallery-card" data-category="residential">
-            <button class="image-button" data-full="../residential/data/processed/python_visualizations/16_insight_admin_dong_quadrants.png" data-title="행정동 수요 포지셔닝">
-              <img src="../residential/data/processed/python_visualizations/16_insight_admin_dong_quadrants.png" alt="행정동 수요 포지셔닝" />
-            </button>
-            <h3>행정동 수요 포지셔닝</h3>
-            <p>세대수와 생산가능인구 비율로 행정동 수요 성격을 구분.</p>
-          </article>
-
-          <article class="gallery-card" data-category="residential">
-            <button class="image-button" data-full="../residential/data/processed/python_visualizations/17_insight_gu_demand_supply_price.png" data-title="구별 수요-공급-가격 포지셔닝">
-              <img src="../residential/data/processed/python_visualizations/17_insight_gu_demand_supply_price.png" alt="구별 수요 공급 가격 포지셔닝" />
-            </button>
-            <h3>구별 수요-공급-가격</h3>
-            <p>세대수 대비 주택수, 매매가, 아파트 비율을 함께 비교.</p>
-          </article>
-
-          <article class="gallery-card" data-category="residential">
-            <button class="image-button" data-full="../residential/data/processed/python_visualizations/18_insight_top_price_combinations.png" data-title="가격 상위 조합">
-              <img src="../residential/data/processed/python_visualizations/18_insight_top_price_combinations.png" alt="가격 상위 조합" />
-            </button>
-            <h3>가격 상위 조합</h3>
-            <p>매매·전세·월세 상위 법정동-건축유형 조합.</p>
-          </article>
-
-          <article class="gallery-card" data-category="residential">
-            <button class="image-button" data-full="../residential/data/processed/python_visualizations/19_insight_transaction_mix.png" data-title="구별 실거래 거래구분 믹스">
-              <img src="../residential/data/processed/python_visualizations/19_insight_transaction_mix.png" alt="구별 실거래 거래구분 믹스" />
-            </button>
-            <h3>거래구분 믹스</h3>
-            <p>구별 매매·전세·월세 거래 비중과 총 거래건수.</p>
-          </article>
-
-          <article class="gallery-card" data-category="employment">
-            <button class="image-button" data-full="../business_employment/data/processed/figures/gu_industry_stack_bar.png" data-title="구별 산업 구성">
-              <img src="../business_employment/data/processed/figures/gu_industry_stack_bar.png" alt="구별 산업 구성" />
-            </button>
-            <h3>구별 산업 구성</h3>
-            <p>구 단위 산업 구조와 노동 공급의 차이를 확인.</p>
-          </article>
-
-          <article class="gallery-card" data-category="employment">
-            <button class="image-button" data-full="../business_employment/data/processed/figures/dong_regular_worker_ratio.png" data-title="행정동별 상용근로자 비율">
-              <img src="../business_employment/data/processed/figures/dong_regular_worker_ratio.png" alt="행정동별 상용근로자 비율" />
-            </button>
-            <h3>상용근로자 비율</h3>
-            <p>고용 안정성과 일자리 성격을 동 단위로 비교.</p>
-          </article>
-
-          <article class="gallery-card" data-category="employment">
-            <button class="image-button" data-full="../business_employment/data/processed/figures/gu_corp_net_inflow_bar.png" data-title="구별 법인 순유입">
-              <img src="../business_employment/data/processed/figures/gu_corp_net_inflow_bar.png" alt="구별 법인 순유입" />
-            </button>
-            <h3>법인 순유입</h3>
-            <p>법인 이동으로 본 업무 기능 변화의 단서.</p>
-          </article>
-
-          <article class="gallery-card" data-category="transport">
-            <button class="image-button" data-full="../transport/transport/data/processed/figures/high_demand_low_access_top10.png" data-title="높은 수요 낮은 접근성 Top 10">
-              <img src="../transport/transport/data/processed/figures/high_demand_low_access_top10.png" alt="높은 수요 낮은 접근성 Top 10" />
-            </button>
-            <h3>High Demand Low Access</h3>
-            <p>통근 수요가 크지만 접근성 개선 필요성이 큰 동.</p>
-          </article>
-
-          <article class="gallery-card" data-category="transport">
-            <button class="image-button" data-full="../transport/transport/data/processed/figures/commute_vs_accessibility.png" data-title="통근 수요와 접근성">
-              <img src="../transport/transport/data/processed/figures/commute_vs_accessibility.png" alt="통근 수요와 접근성" />
-            </button>
-            <h3>통근 수요와 접근성</h3>
-            <p>교통 공급이 통근 수요를 얼마나 완충하는지 비교.</p>
-          </article>
-        </div>
+        <div class="gallery" id="figure-gallery" aria-label="Figure gallery"></div>
       </section>
     </main>
 
@@ -358,6 +280,7 @@
       <img alt="" />
     </dialog>
 
+    <script src="figures.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
