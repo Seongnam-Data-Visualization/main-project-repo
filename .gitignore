@@ -1,12 +1,23 @@
-# 원본 데이터 제외
+# Raw and bulky source data
 business_employment/data/raw
+residential/data/raw/
+Dataset_v1/
 
-# 주피터 체크포인트
+# Notebook checkpoints
 .ipynb_checkpoints/
 
-# 환경 파일
+# Environment files
 .env
-__pycache__/
 
-# 메모 파일
+# Python cache
+__pycache__/
+*.pyc
+
+# OS metadata
+.DS_Store
+
+# Personal notes
 business_employment/memo
+
+# Legacy generated outputs
+output/
