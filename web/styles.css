@@ -26,6 +26,7 @@ body {
   background: #ffffff;
   color: var(--ink);
   font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  font-size: 1.25rem;
   line-height: 1.55;
 }
 
@@ -86,8 +87,8 @@ main {
 
 .overview {
   display: grid;
-  grid-template-columns: minmax(360px, 0.94fr) minmax(440px, 1.06fr);
-  gap: 36px;
+  grid-template-columns: minmax(240px, 2fr) minmax(360px, 3fr);
+  gap: 40px;
   align-items: center;
   padding: 56px clamp(20px, 5vw, 72px) 44px;
   min-height: calc(100vh - 64px);
@@ -101,7 +102,7 @@ main {
 .eyebrow {
   margin: 0 0 12px;
   color: var(--blue);
-  font-size: 0.82rem;
+  font-size: 1.07rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -136,7 +137,7 @@ h3 {
 .lead {
   max-width: 760px;
   color: #475467;
-  font-size: 1.08rem;
+  font-size: 1.33rem;
 }
 
 .metric-row {
@@ -163,7 +164,7 @@ h3 {
   display: block;
   margin-top: 8px;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1.2rem;
 }
 
 .hero-figure {
@@ -172,7 +173,7 @@ h3 {
 
 .hero-figure img {
   width: 100%;
-  max-height: 76vh;
+  max-height: 88vh;
   object-fit: contain;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -183,7 +184,7 @@ h3 {
 figcaption {
   margin-top: 10px;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 1.17rem;
 }
 
 .section {
@@ -202,7 +203,7 @@ figcaption {
 
 .section-heading p:not(.eyebrow) {
   color: #475467;
-  font-size: 1.02rem;
+  font-size: 1.27rem;
 }
 
 .figure-count {
@@ -213,7 +214,7 @@ figcaption {
   border-radius: 999px;
   background: white;
   color: #344054;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
@@ -246,7 +247,7 @@ figcaption {
   border-radius: 999px;
   color: #344054;
   background: var(--soft);
-  font-size: 0.82rem;
+  font-size: 1.07rem;
   font-weight: 800;
 }
 
@@ -267,7 +268,7 @@ figcaption {
 
 .axis-card dt {
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   font-weight: 800;
 }
 
@@ -306,7 +307,7 @@ figcaption {
 
 .type-card strong {
   display: block;
-  font-size: 1.28rem;
+  font-size: 1.53rem;
 }
 
 .type-card span {
@@ -336,29 +337,35 @@ figcaption {
   padding: 24px;
   background: #101828;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .conclusion-panel p,
 .conclusion-panel li {
   color: #e4e7ec;
+  font-size: 1.56rem;
 }
 
 .conclusion-panel ul {
   display: grid;
-  gap: 10px;
-  margin: 18px 0 0;
-  padding-left: 20px;
+  gap: 14px;
+  margin: 0;
+  padding-left: 22px;
 }
 
 .feature-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
   gap: 22px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .feature-figure {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-figure img,
@@ -370,13 +377,37 @@ figcaption {
   background: white;
 }
 
+.feature-figure .image-button,
+.feature-figure img {
+  flex: 1;
+  min-height: 0;
+  object-fit: contain;
+}
+
 .insight-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
+  height: 100%;
 }
 
 .insight-list article {
-  padding: 18px;
+  flex: 1;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.insight-list article h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.insight-list article p {
+  font-size: 1.35rem;
+  line-height: 1.65;
+  margin: 0;
 }
 
 .figure-strip {
@@ -439,16 +470,47 @@ figcaption {
   flex-direction: column;
   min-height: 100%;
   padding: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.gallery-card:hover {
+  box-shadow: 0 4px 20px rgba(16, 24, 40, 0.1);
 }
 
 .gallery-card.is-hidden {
   display: none;
 }
 
-.gallery-card img {
+.gallery-card-preview {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.gallery-card-preview img {
+  width: 100%;
   aspect-ratio: 5 / 3.4;
   object-fit: contain;
-  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+
+.figure-count-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: rgba(16, 24, 40, 0.72);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .figure-meta {
@@ -459,7 +521,7 @@ figcaption {
   border-radius: 999px;
   color: #344054;
   background: var(--soft);
-  font-size: 0.78rem;
+  font-size: 1.03rem;
   font-weight: 800;
 }
 
@@ -519,7 +581,7 @@ figcaption {
 
 .image-dialog {
   width: min(94vw, 1280px);
-  max-height: 92vh;
+  max-height: 94vh;
   padding: 18px;
   border: 0;
   border-radius: 8px;
@@ -530,15 +592,11 @@ figcaption {
   background: rgba(16, 24, 40, 0.72);
 }
 
-.image-dialog h2 {
-  margin: 0 44px 12px 0;
-  font-size: 1.25rem;
-}
-
 .image-dialog img {
   width: 100%;
-  max-height: 78vh;
+  max-height: 74vh;
   object-fit: contain;
+  display: block;
 }
 
 .dialog-close {
@@ -553,6 +611,90 @@ figcaption {
   cursor: pointer;
   font-size: 1.45rem;
   line-height: 1;
+}
+
+.dialog-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 52px 12px 0;
+}
+
+.dialog-figure-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.dialog-counter {
+  color: var(--muted);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.dialog-image-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dialog-prev,
+.dialog-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(208, 213, 221, 0.7);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  font-size: 1.7rem;
+  line-height: 1;
+  transition: background 0.12s, opacity 0.12s;
+}
+
+.dialog-prev { left: 10px; }
+.dialog-next { right: 10px; }
+
+.dialog-prev:disabled,
+.dialog-next:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialog-prev:not(:disabled):hover,
+.dialog-next:not(:disabled):hover {
+  background: white;
+}
+
+.dialog-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 12px;
+  min-height: 14px;
+}
+
+.dialog-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.dialog-dot.is-active {
+  background: var(--ink);
+  transform: scale(1.25);
 }
 
 @media (max-width: 1040px) {
