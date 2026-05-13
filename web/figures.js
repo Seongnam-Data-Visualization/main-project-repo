@@ -349,6 +349,27 @@ const FIGURES = [
     path: "../transport/transport/data/processed/figures/mode_share_by_gu.png",
     description: "구별 지하철·버스·승용차 등 통행 수단 구조.",
   },
+  {
+    category: "transport",
+    group: "교통",
+    title: "구별 접근성 점수 분포",
+    path: "../transport/transport/data/processed/figures/accessibility_score_by_gu.png",
+    description: "구별 통근 접근성 점수 분포. 중원구의 취약 집중과 수정구의 내부 격차를 비교.",
+  },
+  {
+    category: "transport",
+    group: "교통",
+    title: "서울 통근 비중 vs 접근성",
+    path: "../transport/transport/data/processed/figures/seoul_commute_vs_accessibility.png",
+    description: "서울행 통근 비중과 접근성 점수의 교차 산점도. 우하단 음영이 직주분리·접근성 취약 동.",
+  },
+  {
+    category: "transport",
+    group: "교통",
+    title: "연도별 수단 분담 추이",
+    path: "../transport/transport/data/processed/figures/yearly_mode_share_trend.png",
+    description: "2023→2025 성남시 평균 수단 분담률 변화. 승용차 비중 증가와 대중교통 감소 추세.",
+  },
 ];
 
 const LEGACY_RESIDENTIAL_FIGURES = [

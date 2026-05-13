@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build site
+        run: |
+          set -e
+          mkdir -p dist
+
+          # web 파일을 루트로 복사
+          cp web/index.html dist/index.html
+          cp web/styles.css dist/styles.css
+          cp web/app.js     dist/app.js
+          cp web/figures.js dist/figures.js
+
+          # 상대 경로 수정: ../ → ./
+          for f in dist/index.html dist/figures.js; do
+            sed -i 's|\.\./analysis/|./analysis/|g'             "$f"
+            sed -i 's|\.\./residential/|./residential/|g'       "$f"
+            sed -i 's|\.\./business_employment/|./business_employment/|g' "$f"
+            sed -i 's|\.\./transport/|./transport/|g'           "$f"
+          done
+
+          # 참조 이미지 폴더 복사
+          mkdir -p dist/analysis
+          cp -r analysis/figures dist/analysis/
+
+          mkdir -p dist/residential/data/processed
+          cp -r residential/data/processed/figures              dist/residential/data/processed/
+          cp -r residential/data/processed/python_visualizations dist/residential/data/processed/
+
+          mkdir -p dist/business_employment/data/processed
+          cp -r business_employment/data/processed/figures dist/business_employment/data/processed/
+
+          mkdir -p dist/transport/transport/data/processed
+          cp -r transport/transport/data/processed/figures dist/transport/transport/data/processed/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
