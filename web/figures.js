@@ -56,30 +56,31 @@ const FIGURE_GROUPS = [
     id: "transport-priority",
     category: "transport",
     title: "교통 우선 개입 분석",
-    description: "높은 통근 수요와 낮은 접근성이 겹치는 동을 식별.",
+    description: "높은 통근 수요와 낮은 접근성이 겹치는 동을 사분면·우선순위로 식별.",
     figures: [
       { path: "../transport/transport/data/processed/figures/high_demand_low_access_top10.png", title: "높은 수요·낮은 접근성 Top 10" },
+      { path: "../transport/data/processed/figures/transport_quadrant_story.png", title: "교통 사분면 분석" },
+      { path: "../transport/data/processed/figures/transport_priority_story.png", title: "교통 투자 우선순위" },
     ],
   },
   {
     id: "transport-commute",
     category: "transport",
     title: "통근-접근성 구조",
-    description: "동별 통근 수요와 접근성 점수의 관계, 구별 점수 분포, 서울 통근 비중과 접근성의 교차 패턴.",
+    description: "동별 통근 수요와 접근성 점수의 관계, 교통 변수 전체 프로파일.",
     figures: [
       { path: "../transport/transport/data/processed/figures/commute_vs_accessibility.png", title: "통근 수요와 접근성" },
-      { path: "../transport/transport/data/processed/figures/accessibility_score_by_gu.png", title: "구별 접근성 점수 분포" },
-      { path: "../transport/transport/data/processed/figures/seoul_commute_vs_accessibility.png", title: "서울 통근 비중 vs 접근성" },
+      { path: "../transport/data/processed/figures/transport_profile_heatmap.png", title: "교통 변수 프로파일 히트맵" },
     ],
   },
   {
     id: "transport-mode",
     category: "transport",
-    title: "수단 분담 구조",
-    description: "구별 대중교통·승용차 수단 구조와 2023→2025 연도별 분담 추이.",
+    title: "수단 분담과 혼잡",
+    description: "구별 대중교통·승용차 수단 구조와 도로 혼잡-접근성 관계.",
     figures: [
       { path: "../transport/transport/data/processed/figures/mode_share_by_gu.png", title: "구별 통행 수단 비중" },
-      { path: "../transport/transport/data/processed/figures/yearly_mode_share_trend.png", title: "연도별 수단 분담 추이" },
+      { path: "../transport/data/processed/figures/congestion_vs_accessibility_story.png", title: "혼잡도와 접근성 관계" },
     ],
   },
 ];
